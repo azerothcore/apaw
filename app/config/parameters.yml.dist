@@ -1,0 +1,82 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    #mailer_transport:  smtp
+    #mailer_host:       127.0.0.1
+    #mailer_user:       ~
+    #mailer_password:   ~
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+    
+    database:
+        default_connection: local
+        connections:
+            local:
+                world:
+                    driver: pdo_mysql
+                    host: localhost
+                    port: 3306
+                    dbname: azerothcore_local_world
+                    user: root
+                    password: root
+                    charset: UTF8
+                auth:
+                    driver: pdo_mysql
+                    host: localhost
+                    port: 3306
+                    dbname: azerothcore_local_auth
+                    user: root
+                    password: root
+                    charset: UTF8
+                char:
+                    driver: pdo_mysql
+                    host: localhost
+                    port: 3306
+                    dbname: azerothcore_local_chars
+                    user: root
+                    password: root
+                    charset: UTF8
+            remote:
+                world:
+                    driver: pdo_mysql
+                    host: yourhost
+                    port: 3306
+                    dbname: azerothcore_remote_world
+                    user: root
+                    password: root
+                    charset: UTF8
+                auth:
+                    driver: pdo_mysql
+                    host: yourhost
+                    port: 3306
+                    dbname: azerothcore_remote_auth
+                    user: root
+                    password: root
+                    charset: UTF8
+                char:
+                    driver: pdo_mysql
+                    host: yourhost
+                    port: 3306
+                    dbname: azerothcore_remote_chars
+                    user: root
+                    password: root
+                    charset: UTF8
+    soap:
+        connections:
+            local:
+                host: 127.0.0.1
+                port: yourport
+                user: youruser
+                pass: yourpass
+                protocol: http
+            remote:
+                host: yourhost
+                port: yourport
+                user: youruser
+                pass: yourpass
+                protocol: http
