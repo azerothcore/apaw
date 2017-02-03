@@ -1,4 +1,6 @@
-apaw
+APAW - Another PHP Api for WoW
 ====
 
-Another PHP Api for WoW
+![Logo](web/images/logo.png?raw=true "Logo")
+
+
