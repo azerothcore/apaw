@@ -5,8 +5,6 @@ use \Symfony\Component\HttpKernel\Kernel;
 
 class AppKernel extends \Symfony\Component\HttpKernel\Kernel {
 
-    private $acoreService;
-
     public function __construct($environment, $debug) {
         parent::__construct($environment, $debug);
     }
