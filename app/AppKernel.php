@@ -1,9 +1,9 @@
 <?php
 
-use Symfony\Component\Config\Loader\LoaderInterface;
+use \Symfony\Component\Config\Loader\LoaderInterface;
 use \Symfony\Component\HttpKernel\Kernel;
 
-class AppKernel extends \Symfony\Component\HttpKernel\Kernel {
+class AppKernel extends Kernel {
 
     public function __construct($environment, $debug) {
         parent::__construct($environment, $debug);
@@ -29,6 +29,13 @@ class AppKernel extends \Symfony\Component\HttpKernel\Kernel {
         }
 
         $bundles = array_merge($bundles, ACore\Framework\ACoreFramework::getBundles());
+
+        if (file_exists(dirname(__FILE__) . "/AppCustom.php")) {
+            require_once dirname(__FILE__) . "/AppCustom.php";
+            if (method_exists("AppCustom", "getCustomBundles")) {
+                $bundles = array_merge($bundles, AppCustom::getCustomBundles());
+            }
+        }
 
         return $bundles;
     }

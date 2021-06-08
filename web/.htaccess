@@ -20,6 +20,11 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    <If "%{HTTP_COOKIE} =~ /enable_dev=1/">
+        #php_flag opcache.enable Off
+        #php_flag apc.cache_by_default Off
+    </If>
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper

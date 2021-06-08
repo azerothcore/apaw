@@ -1,0 +1,7 @@
+services:
+    azth.char_mgr:
+        class: AzthBundle\Services\CharMgr
+        calls:
+          - [ setContainer,['@service_container'] ]
+          - [ setCharDb, ['@database.doctrine_db'] ]
+
