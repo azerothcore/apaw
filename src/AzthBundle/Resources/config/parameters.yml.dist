@@ -1,0 +1,21 @@
+doctrine:
+    default_connection: local
+    connections:
+        local:
+            extra:
+                driver:   pdo_mysql
+                host:     'localhost'
+                port:     '3306'
+                dbname:   'localdb'
+                user:     'root'
+                password: 'root'
+                charset:  UTF8
+        remote:
+            extra:
+                driver:   pdo_mysql
+                host:     'localhost'
+                port:     '3306'
+                dbname:   'azerothcore_remote_extra
+                user:     'root'
+                password: 'root'
+                charset:  UTF8

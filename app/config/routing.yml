@@ -1,7 +1,13 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+azth:
+    resource: '@AzthBundle/Controller/'
+    type:     annotation
 framework:
     resource: "@ACoreFramework/Resources/config/routing.yml"
+    
+
+
 
 
